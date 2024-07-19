@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Component</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .modal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8">
+        <button id="openModalBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Open Modal
+        </button>
+    </div>
+
+    <div id="modal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg w-1/2 p-6">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h2 class="text-2xl font-bold">Modal Title</h2>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">&times;</button>
+            </div>
+            <div class="mt-4">
+                <p>This is the modal content. You can put any information here.</p>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button id="closeModalBtnBottom"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('openModalBtn').addEventListener('click', function () {
+            document.getElementById('modal').style.display = 'flex';
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', function () {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        document.getElementById('closeModalBtnBottom').addEventListener('click', function () {
+            document.getElementById('modal').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
